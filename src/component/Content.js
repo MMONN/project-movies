@@ -12,17 +12,17 @@ function Content(props) {
             if (cart.length === 0) {
                   setCart([props.item])
             } else {
-                  const chekCart = cart.find((data) => data.id === props.item.id) //.find is method array return ค่ามาเลย ถ้าไม่มีค่า จะ return undifind or null
+                  const chekCart = cart.find((data) => data.id === props.item.id) 
                   if (chekCart === undefined) {
-                        return setCart(prevState => { //หมายความว่า ให้เอา state ก่อนหน้า แล้วคอยทำการ สิ่งที่เราต้องการ
-                              const newCart = [...prevState] //เอาค่า state ที่เคยมี ใส่ใน cart 
+                        return setCart(prevState => { 
+                              const newCart = [...prevState] 
                               newCart.push(props.item)
                               return newCart
                         })
                   }
             }
       };
-
+      
       return (
             <div className="box-movie">
                   <div className="image">
